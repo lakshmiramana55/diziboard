@@ -1,0 +1,48 @@
+.attendence-container {
+    background-color: #696984;
+    border: 5px solid #e0e0e0;
+    cursor: pointer;
+    width: 320px;
+    height: 320px;
+    margin-top: 5px;
+    margin-left: 0px;
+  }
+  
+  .inner-attendence-container {
+    display: flex;
+    justify-content: space-between;
+    margin-left: 15px;
+    
+  }
+  
+  .day-heading {
+    color: white;
+    font-size: 20px;
+    justify-content: right;
+    align-items: center;
+   
+  }
+  
+  .day-description {
+    color: white;
+    font-size: 20px;
+   margin-right: 50px;
+    
+    background-color: #0572cd;
+    height: 40px;
+    width: 40px;
+    padding-top: 5px;
+    border-radius: 30px;
+    margin-top: -7px;
+  }
+  
+  .description {
+    color: white;
+   
+    font-size: 10px;
+    
+  }
+
+  .number{
+    margin-top: 5px;
+  }

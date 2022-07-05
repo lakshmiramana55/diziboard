@@ -1,0 +1,20 @@
+.add-marks-modal-box {
+    width: 500px !important;
+  }
+  
+  .each-input-in-add-marks {
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+  }
+  .addmarks-button-in-kidmarks {
+    margin-left: 5px !important;
+    height: 32px;
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+    align-items: center;
+    font-size: 14px;
+    border-radius: 2px !important;
+    border: 1px solid #045fab;
+  }

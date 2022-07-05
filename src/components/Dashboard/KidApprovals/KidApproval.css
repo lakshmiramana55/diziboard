@@ -1,0 +1,61 @@
+.kid-approvals-buttons-container{
+    display: flex;
+    justify-content: flex-start;
+    margin-top: 40px;
+    margin-left: 20px;
+    
+}
+
+.horizontal{
+    color: black
+}
+.data-para{
+    background-color: #e4f0fa;
+    margin: 18px;
+    height: 35px;
+    margin-top: -33px;
+    box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
+  
+}
+
+.para{
+    text-align: left;
+    font-size: 13px;
+    
+}
+
+.header{
+    width: 30px;
+}
+
+
+
+
+.page-container{
+    display: flex;
+    margin-left: 20px;
+    margin-top: -10px;
+}
+
+.page-name{
+    font-weight: 500;
+    color: lightslategray;
+    margin-left: 10px;
+    margin-right: 10px;
+}
+
+.line{
+    
+    margin-left: 0px;
+    
+}
+
+.oj-flex.oj-flex-items-pad>.oj-flex-item {
+    padding-left: 10px;
+    padding-right: 10px;
+}
+
+.approval-name{
+    color: red;
+    margin-bottom: -18px;
+}

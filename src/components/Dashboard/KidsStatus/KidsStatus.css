@@ -1,0 +1,153 @@
+.event-table{
+
+    color: black;
+    
+    background-color: brown;
+    
+    padding: 20px;
+    
+    display: flex;
+    
+    
+    }
+    
+    
+    
+    .table_bg{
+    
+        border-collapse: collapse;
+    
+       max-width: 900px;
+    
+       width: 100%;
+    
+        margin: 2rem auto;
+    
+        padding: 10px;
+        width: 100%;
+    
+    }
+    
+    
+    
+    .table-head{
+    
+        
+    
+        background-color: #0a77d5;
+    
+        text-align: left;
+    
+        height: 10px;
+    
+    
+    
+    
+    }
+    
+    
+    
+    table th, table td{
+    
+        border:  1px solid #ddd;
+    
+        padding: 8px;
+    
+    }
+
+    .trigger-button{
+        background-color: #177ed7 !important;
+        color: #ffffff;
+        margin:6px;
+        width: 100px;
+        height: 35px; 
+        border-width: 0px;
+        border-radius: 3px;
+       
+    }
+
+    .trigger-button1{
+        margin-left:6px;
+        width: 100px;
+        height: 35px; 
+        border-width: 0px;
+        border-radius: 3px;
+       background-color: #e3f2f7;
+       color: lightslategray;
+       
+    }
+    
+    .container{
+        display: flex;
+        margin: 10px;
+        margin-top: 30px;
+       
+        }
+        
+     .close{
+        width: 40px;
+        height: 30px;
+        background-color: transparent;
+        margin-top: 5px;
+        margin-right: 5px;
+        color: #ffffff;
+        border: 1em;
+     }   
+    
+    .popup-container{
+        display: flex;
+        justify-content: space-between;
+       background-color: #177ed7;
+       border-width: 0px;
+        height: 48px;
+        width: 300px;
+        color: #ffffff;
+        margin-bottom: -16px;
+         box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+         border-radius: 1px;
+        
+    }
+    .heading{
+        color: white;
+        font-size: 20px;
+        padding-left: 10px;
+        font-family: 'Roboto';
+        
+    }
+    
+    .closing-button{
+       background-color: #177ed7;
+       color: #ffffff;
+       border-width: 0px;
+       height: 32px;
+       width: 50px;
+       margin: 5px;
+       margin-top: 20px;
+       border-radius: 3px;
+    }
+    .para-container{
+        background-color: #ffffff;
+        box-shadow: rgba(100, 100, 111, 0.2) 0px 7px 29px 0px;
+        margin: 0px;
+        height: 100px;
+        width: 300px;
+        
+    }
+    .popup1{
+        transform: scale(0) !important;
+        transition: all 0.5s ease-in-out !important;
+    }
+    .para{
+        font-size: 13px;
+        margin-left: 10px;
+        padding-top: 5px;
+
+    }
+
+    .button-container{
+       
+        
+        color: #ffffff;
+        border-width: 0px;
+       text-align: end;
+    }

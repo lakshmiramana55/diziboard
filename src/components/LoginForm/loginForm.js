@@ -1,0 +1,119 @@
+import "./loginForm.css";
+import React from "react";
+import { useState } from "react";
+import { FaEnvelope } from "react-icons/fa";
+import { FaKey } from "react-icons/fa";
+import { useNavigate } from "react-router-dom";
+import Cookies from "js-cookie";
+
+
+const LoginForm = () => {
+  const [username, setUserName] = useState("");
+  const [password, setPassword] = useState("");
+  const[errorMsg,setErrorMsg]  = useState("");
+
+  const navigate = useNavigate();
+
+  const onUserInputChange = (event) => {
+    setUserName(event.target.value);
+  };
+
+  const onPasswordChange = (event) => {
+    setPassword(event.target.value);
+  };
+
+  const letMeInHandler = async (event) => {
+    event.preventDefault();
+
+  
+    const options = {
+      method: "POST",
+      headers: {
+        authorization:
+          "Basic " +
+          btoa(
+            "caOy0SPygHWCULpa3GREF02pNCka" +
+              ":" +
+              "06U5o38fXtJEiONfd4EwsM12Qywa"
+          ),
+        "Content-Type": "application/x-www-form-urlencoded",
+      },
+      body: `grant_type=password&username=${username}&password=${password}`,
+    };
+    const url = "http://192.168.0.116:8280/token";
+    const response = await fetch(url, options);
+    const tokenObj = await response.json();
+    Cookies.set("loginToken", tokenObj.access_token, {expires:1})
+    
+
+    if (tokenObj.access_token !== undefined) {
+      navigate("/Dashboard");
+    }
+    else{
+        setErrorMsg('Credentials are not valid please enter correct Credentials')
+    }
+  };
+
+  return (
+    <div className="row">
+      <div className="col-12">
+    <div className="login-bg-container col-sm-4">
+      <div className="login-details-container">
+        <img
+          alt="login page logo"
+          className="login-page-logo"
+          src="http://192.168.0.116:8080/css/images/logo.png"
+        />
+
+        <h1 className="login-text">Login</h1>
+        <form className="form-container" onSubmit={letMeInHandler}>
+          <div className="user-name-container">
+            <div className="fa-envelope-container">
+              <FaEnvelope />
+            </div>
+            <div className="input-container">
+              <input
+                onChange={onUserInputChange}
+                className="input-box"
+                placeholder="Username"
+                type="text"
+              />
+            </div>
+          </div>
+          <div className="user-name-container">
+            <div className="fa-envelope-container">
+              <FaKey />
+            </div>
+            <div className="input-container">
+              <input
+                onChange={onPasswordChange}
+                className="input-box"
+                placeholder="Password"
+                type="password"
+              />
+              
+            </div>
+            
+          </div>
+          <p className="error-msg">{errorMsg}</p>
+          <div>
+            <button
+              className="btn btn-primary btn-block btn-large let-me-in-button"
+              type="submit"
+            >
+              Let me in
+            </button>
+          </div>
+          <div className="forgot-signup-container">
+            <p className="white-text">Forgot Password?</p>
+            <p className="white-text">Sign up</p>
+          </div>
+        </form>
+      </div>
+      </div>
+      </div>
+    </div>
+  );
+};
+
+export default LoginForm;

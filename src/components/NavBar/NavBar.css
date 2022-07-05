@@ -1,0 +1,51 @@
+.nav-container {
+    position: fixed;
+    padding-right: 20px;
+    
+  }
+  
+  .nav-container:hover {
+    background-color: rgb(100, 100, 100);
+ }
+  .hr-line {
+    margin-top: 0px;
+    width: 0px;
+    position: fixed;
+  }
+
+  .fixed-top {
+    position: fixed;
+    top: 0;
+    right: 0;
+    left: 0;
+    z-index: 1030;
+    justify-content: space-between;
+    
+  }
+  .navbar-container{
+    display: flex;
+    
+   padding-top: 15px;
+  
+   
+   
+  }
+
+  .navbar-logo{
+width: 150px;
+height: 60px;
+margin-left: 250px;
+  }
+
+  .header{
+    padding-top: 15px;
+    text-align: center;
+    
+  }
+
+  .navbar-heading{
+    color: lightslategray;
+    text-decoration: none;
+    margin-left: 30px;
+    
+  }
