@@ -1,7 +1,3 @@
-
-
-
-
 import React, { useEffect, useState } from "react";
 import Calendar from "react-calendar";
 import './Attendence1.css'
@@ -22,7 +18,7 @@ const Attendence = () => {
 
   const loginToken=Cookies.get("loginToken")
 
-
+  const current = new Date()
   const handleShow = (date) => {
     let month=date.getMonth()+1
     let date1=date.getDate() 
@@ -33,6 +29,8 @@ const Attendence = () => {
       date1=`0${date1}`
     }
     const reqDate=`${date.getFullYear()}-${month}-${date1}`
+   
+    setCalendarDate(reqDate)
 
     const getDailyAttendance=async()=>{
     const responseObj=await fetch('http://192.168.0.116:8280/mas_daily_attendance/1.0/mas_getdailyattendance', {
@@ -86,13 +84,15 @@ const Attendence = () => {
     getClassKidsList()
 
 
-  }, [currentAbsentArr])
+  }, [])
 
 
+  
+  
   const onSubmit = () => {
+  
 
-
-    fetch('http://192.168.0.116:8280/mas_daily_attendance/1.0/mas_postdailyattendance', {
+    fetch('http://192.168.0.116:8280/mas_deletekidabsencedata/1.0/mas_deletekidabsencedata', {
       method: "POST",
       headers: {
         "Content-Type": "application/json",
@@ -101,33 +101,31 @@ const Attendence = () => {
       body: JSON.stringify({
 
 
-        "header":
-        {
-          "guid": "a7843082-60f1-1301-a041-0f72e6675525",
-          "responseOn": "2022-7-1.17:8:21",
-          "responseFrom": "Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36",
-          "userRef": "155AAdfi",
-          "geoLocation": "anonymous",
-          "status": "success",
-          "statuscode": "0"
-        },
-        "body":
-        {
-          "mas_SchoolUniqueId": "5911355945",
-          "mas_kiduserID": currentAbsentArr,
-          "mas_class": "SECOND CLASS",
-          "mas_section": "B",
-          "mas_date": "",
-          "mas_noofdaysabs": "1",
-          "mas_month": "July",
-          "mas_year": "2022",
-          "mas_createdby": "155AAdfi",
-          "mas_createdon": "2022-07-1",
-          "mas_modifiedby": "155AAdfi",
-          "mas_modifiedon": "2022-07-1",
-          "appFor": "web"
-        }
-      }
+        
+          "header":{
+            "guid":"a7843082-60f1-1301-a041-0f72e6675525",
+            "responseOn":"2022-7-1.17:8:21",
+            "responseFrom":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36",
+            "userRef":"155AAdfi",
+            "geoLocation":"anonymous",
+            "status":"success","statuscode":"0"
+          },
+            "body":{
+              "mas_SchoolUniqueId":"5911355945",
+            "mas_kiduserID":currentAbsentArr,
+            "mas_class":"SECOND CLASS",
+            "mas_section":"B",
+            "mas_date":calendarDate,
+            "mas_noofdaysabs":"1",
+            "mas_month":"July",
+            "mas_year":"2022",
+            "mas_createdby":"155AAdfi",
+            "mas_createdon":new Date(),
+            "mas_modifiedby":"155AAdfi",
+            "mas_modifiedon":new Date(),
+            "appFor":"web"
+          }}
+      
       )
 
     })
@@ -140,21 +138,97 @@ const Attendence = () => {
         console.error(error);
       });
 
+
+
+      fetch('http://192.168.0.116:8280/mas_daily_attendance/1.0/mas_postdailyattendance', {
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+        Authorization: `Bearer ${loginToken}`
+      },
+      body: JSON.stringify({
+         
+          "header":{
+            "guid":"730ab2ac-9d9f-ef04-62a9-9b56f111443a",
+            "responseOn":"2022-7-5.11:55:29",
+            "responseFrom":"Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) Chrome/103.0.0.0 Safari/537.36",
+            "userRef":"155AAdfi",
+            "geoLocation":"anonymous",
+            "status":"success",
+            "statuscode":"0"
+          },
+            "body":{
+              "mas_SchoolUniqueId":"5911355945",
+              "mas_kiduserID":absentArray,
+              "mas_class":"SECOND CLASS",
+              "mas_section":"B",
+              "mas_date":calendarDate,
+              "mas_noofdaysabs":"1",
+              "mas_month":"July",
+              "mas_year":2022,
+              "mas_createdby":"155AAdfi",
+              "mas_createdon":new Date(),
+              "mas_modifiedby":"155AAdfi",
+              "mas_modifiedon":new Date(),
+              "appFor":"web"
+          }
+        }
+      
+      )
+
+    })
+      .then((data) => {
+        setCurrentAttendance(data)
+        console.log(data)
+      })
+
+      .catch((error) => {
+        console.error(error);
+      });
+
   }
 
+ 
 
   return (
 
     <>
-      <Popup trigger={
-        <div className="header1">
-          <Calendar className='calendar1' onChange={handleShow} value={calendarDate} />
-        </div>
-      } >
-        <div className="attendance-container">
+    
+      <Popup 
+        modal
+        trigger={
+
+            // <button type="button" className={buttons}  disabled = {buttonsDisable}>
+            //     DEACTIVATE
+            // </button>
+
+           <div className="main-container">
+           <div className="header1">
+            <Calendar className='calendar1' onChange={handleShow} />
+          </div>
+          <div className="holidays-heading">
+          <h1 className="festival-heading">Festive Holidays List</h1>
+
+      <p className="festival-heading1">No Holidays in this Month</p>
+      </div>
+          </div>
+        }
+
+      
+      // trigger={
+      //   <div className="header1">
+      //     <Calendar className='calendar1' onChange={handleShow} />
+      //   </div>
+      // } >
+      >
+        {close =>(
+        <div className="attendance-container ">
          
-          <div className="attendance-popup">
-            <div className="attendance-popup-inner">
+          <div className="attendance-popup ">
+          <button type="button" className="close-button" aria-label="Close" onClick={close}>
+  <span aria-hidden="true">&times;</span>
+</button>
+            <div className="attendance-popup-inner ">
               {attendences.map(eachObj => {
 
 
@@ -186,21 +260,24 @@ const Attendence = () => {
 
                     <p className="text-name">{eachObj.mas_kidId}</p>
                   </li>
+                  
                 )
+                
               })}
-
+  
             </div>
-            <button className="submit-button" onClick={() => onSubmit()}>Submit</button>
+            <div className="submit-button1">
+            <button className="submit-button" data-dismiss="modal" onClick={() => onSubmit(close())} >Submit</button>
+            </div>
           </div>
-
+          
         </div>
-
+        )}
+       
       </Popup>
 
 
-      <h1 className="festival-heading">Festive Holidays List</h1>
-
-      <p className="festival-heading1">No Holidays in this Month</p>
+      
 
     </>
 
@@ -209,20 +286,3 @@ const Attendence = () => {
 
 };
 export default Attendence
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-

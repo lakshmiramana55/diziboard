@@ -18,7 +18,7 @@
 
     border:  1px solid #ddd;
 
-    padding: 8px;
+   
 
 }
 
@@ -44,6 +44,8 @@
 
 
 
+
+
 .table-head {
 
     background-color:  gainsboro;
@@ -52,13 +54,13 @@
 
 
 
-.body{
+/* .body{
 
    
 
     background-color: #85bbe7;
 
-    flex-wrap: wrap;
+    
 
 }
 
@@ -69,4 +71,4 @@
     border: solid 10px black;
     background-color: #85bbe7;
 
-}
+} */

@@ -30,7 +30,7 @@ const Home = () => {
       <div onMouseMove={onMouseMoveHandler}>
         <div className="home-bg">
           <div>
-            <img
+          <img
               src="http://192.168.0.116:8080/images/logo_big.png"
               alt="logo-big"
             />
@@ -56,6 +56,7 @@ const Home = () => {
         </div>
         <div>
           <img
+          className="phone"
             src="http://192.168.0.116:8080/images/iphone-black.png"
             alt="iphone-black"
           />

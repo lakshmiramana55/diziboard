@@ -1,4 +1,4 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState ,useReducer} from "react";
 import axios from 'axios'
 import KidsTable from "./KidsTable/KidsTable";
 
@@ -8,18 +8,19 @@ import Popup from 'reactjs-popup'
 
 import './KidsStatus.css'
 
-
+import Cookies from "js-cookie";
 
 const KidsStatus = () =>{
     const[statusKid,setStatusKid] = useState([])
     const[buttonsDisable,setButtonsDisable] = useState(true)
     const[kidIdSelected, setkidIdSelected] = useState()
     const [updateStatus, setUpdateStatus]= useState()
+    const [removeBox,setRemoveBox] = useState()
     // const [paginatedPosts, setPaginatedPosts] = useState();
     // const [currentPage, setcurrentPage] = useState(1)
     
   
-    
+    const loginToken= Cookies.get("loginToken")
 
 
     const buttons = buttonsDisable? 'trigger-button1': 'trigger-button' 
@@ -35,7 +36,7 @@ const KidsStatus = () =>{
             axios.get('http://192.168.0.116:8280/Mas_KIDS_Details/1.0/get_kid_Records?mas_userId=ct2@gmail.com&mas_requestedOn=2022-6-28%2014:37:16&mas_requestedFrom=Mozilla/5.0%20(Windows%20NT%2010.0;%20Win64;%20x64)%20AppleWebKit/537.36%20(KHTML,%20like%20Gecko)%20Chrome/102.0.0.0%20Safari/537.36&mas_guid=cec12daa-943f-ac03-ee8f-33636f145179&mas_geolocation=anonymous&limit=10&totalResults=true', {
                 headers: {
                  Accept:"application/json",
-                  Authorization: `Bearer 1896efef-d34a-3605-b194-8e430faa5fa5`
+                  Authorization: `Bearer ${loginToken}`
                 }
               })
               .then((res) => {console.log(res.data);
@@ -67,12 +68,13 @@ const KidsStatus = () =>{
 
       const disableButtons = showOrHide =>{
               setButtonsDisable(showOrHide)
+              setRemoveBox(showOrHide)
               console.log(setButtonsDisable)
       }
      
       const onResetButton = () =>{
                setButtonsDisable(true)
-                
+                setRemoveBox(true)
                }
       
    
@@ -82,7 +84,7 @@ const KidsStatus = () =>{
     
    <div>
     
-    <div className="container">
+    <div className="container ">
             <Popup
                 modal
                 trigger={
@@ -100,12 +102,13 @@ const KidsStatus = () =>{
                     
                     const updateStatus = (status) =>{
                         setButtonsDisable(true)
+                        setRemoveBox(true)
                         close()
                       fetch('http://192.168.0.116:8280/mas_kids_Status_Change/1.0/Kid_Status_Change', {
                         method: 'POST',
                         headers: {
                             "Content-Type":"application/json",
-                            Authorization: `Bearer 1896efef-d34a-3605-b194-8e430faa5fa5`
+                            Authorization: `Bearer ${loginToken}`
                         },
                         body: JSON.stringify({
                             "header": {
@@ -137,15 +140,15 @@ const KidsStatus = () =>{
 
                     return (
                     <>
-                       <div className="'popup1">
-                       <div className="popup-container"> 
+                       
+                       <div className="popup-container "> 
                             <h1 className="heading">Change Status</h1>
                             <button type="button" className="close" aria-label="Close" onClick = {close}>
                                <span aria-hidden="true">&times;</span>
                             </button>
                             </div>
                             
-                        <div className="para-container">
+                        <div className="para-container ">
                         <p className="para">Do You Really Want to Change Status..?</p>
                         
                         <div className="button-container">
@@ -165,7 +168,7 @@ const KidsStatus = () =>{
                         </button>
                         </div>
                         </div>
-                        </div>
+                        
                         
                         </>
                     
@@ -192,13 +195,15 @@ const KidsStatus = () =>{
 
                 {close => {
                   const updateStatus = (status) =>{
+                    
                     setButtonsDisable(true)
+                    setRemoveBox(true)
                     close()
                   fetch('http://192.168.0.116:8280/mas_kids_Status_Change/1.0/Kid_Status_Change', {
                     method: 'POST',
                     headers: {
                         "Content-Type":"application/json",
-                        Authorization: `Bearer 1896efef-d34a-3605-b194-8e430faa5fa5`
+                        Authorization: `Bearer ${loginToken}`
                     },
                     body: JSON.stringify({
                         "header": {
@@ -272,7 +277,7 @@ const KidsStatus = () =>{
             </button>
         </div>
     
-        <KidsTable data= {statusKid} column = {column} disableButtons = {disableButtons} selectedKidId={selectedKidId}/>
+        <KidsTable data= {statusKid} column = {column} disableButtons = {disableButtons} selectedKidId={selectedKidId} />
         
        
     

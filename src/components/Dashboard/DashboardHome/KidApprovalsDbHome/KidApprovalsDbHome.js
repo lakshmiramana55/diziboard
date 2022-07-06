@@ -20,7 +20,7 @@ const KidApprovalsDbHome = () => {
 
           <div className="requests">
             <div className="approvals">
-              <h1 className="number">22</h1>
+              <h1 className="number">17</h1>
 
               <h1 className="text">Approvals</h1>
             </div>

@@ -10,6 +10,15 @@
   );
   padding: 10px;
 }
+
+
+@media screen and (max-width: 480px){
+  .dashboard-nav-bg-container {
+    text-align: center !important;
+    
+  }
+}
+
 .dashboard-nav-container {
   display: flex;
   justify-content: space-between;
@@ -32,6 +41,12 @@
   
 }
 
+@media screen and (max-width: 480px){
+  .db-nav-logo {
+    text-align: center !important;
+    width: 60px;
+  }
+}
 .image{
   justify-content: center;
   text-align: center;

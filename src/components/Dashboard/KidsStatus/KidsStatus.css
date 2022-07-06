@@ -44,6 +44,8 @@
     
     
     }
+
+    
     
     
     
@@ -133,10 +135,7 @@
         width: 300px;
         
     }
-    .popup1{
-        transform: scale(0) !important;
-        transition: all 0.5s ease-in-out !important;
-    }
+    
     .para{
         font-size: 13px;
         margin-left: 10px;

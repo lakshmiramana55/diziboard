@@ -1,9 +1,15 @@
 .bg-container {
-    background-image: url("http://192.168.0.116:8080/images/shutterstock_246299713.jpg");
-    width: 100%;
-    min-height: 100vh;
+  background-image: url("http://192.168.0.116:8080/images/shutterstock_246299713.jpg");
+   
+  background-attachment: fixed;
+ 
+    background-position: 50% 50%;
     background-size: cover;
-    background-attachment: fixed;
+    -moz-background-size: cover;
+    -o-background-size: cover;
+    -webkit-background-size: cover;
+    
+    
   }
   
   .home-heading {
@@ -16,14 +22,15 @@
     -moz-transition: all 1s;
     -o-transition: all 1s;
     -webkit-transition: all 1s;
+
   }
   .navbar-logo {
     height: 50px;
   }
   .home-bg {
-    min-height: 80vh;
+    min-height: 55vh;
     display: flex;
-    flex-direction: row;
+    
     justify-content: center;
     align-items: center;
   }
@@ -31,7 +38,7 @@
     display: flex;
     flex-direction: row;
     justify-content: flex-start;
-    margin-top: 100px;
+    margin-top: 10px !important;
   }
   .download-button {
     background-color: #129cf3;
@@ -54,7 +61,6 @@
     display: flex;
     flex-direction: row;
     justify-content: space-around;
-    align-items: center;
   }
   .transform-text {
     color: #fff;
@@ -77,4 +83,9 @@
   }
   .display {
     display: block;
+  }
+
+  .phone{
+    width: 250px;
+    height: 500px;
   }

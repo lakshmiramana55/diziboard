@@ -33,7 +33,7 @@ const KidsTable = (props) => {
                
                 { 
                     data1.length>0?
-                data1.map((item, index) => <TableBody removeCheckBox={removeCheckBox} disableButtons={disableButtons} 
+                data1.map((item, index) => <TableBody  disableButtons={disableButtons} removeCheckBox = {removeCheckBox}
                 selectedKidId={selectedKidId} eachObj={item} />): ""}
                 
                 </tbody>
@@ -54,29 +54,32 @@ const TableBody = (props) => {
     const { eachObj,selectedKidId, removeCheckBox, disableButtons} = props
     const [checkedKidIds  , setCheckedKidIds]=useState([])
     const[checkboxStatus,setCheckboxStatus] = useState([])
-
+    const [is_checked,set_is_checked]= useState(false);
     
 
     const onChangeCheckboxHandler=event=>{
+        set_is_checked(event.target.checked)
+        
         selectedKidId(eachObj.mas_kidId)
        if(event.target.checked ){
         disableButtons(false)
-        removeCheckBox(true)
+        removeCheckBox(false)
       }
       else{
         disableButtons(true)
-        removeCheckBox(false)
+        removeCheckBox(true)
       }
-          
+       selectedKidId('')   
     } 
     useEffect(()=>{
         
         
     }, [checkedKidIds])
+
     return (
             <tr>
                 <th >
-                    <input type="checkbox"  onChange={onChangeCheckboxHandler}
+                    <input type="checkbox"  checked = {is_checked}  onChange={onChangeCheckboxHandler}
                  removeCheckBox = {removeCheckBox}/></th>
                 <th >{eachObj.mas_kidId}</th>
                 <th >{eachObj.mas_firstName}</th>

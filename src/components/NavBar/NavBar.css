@@ -1,11 +1,12 @@
 .nav-container {
     position: fixed;
     padding-right: 20px;
-    
+    background-color:  rgba(59, 59, 59, 0.7);
+   
   }
   
   .nav-container:hover {
-    background-color: rgb(100, 100, 100);
+    background-color:  rgba(59, 59, 59, 0.7);
  }
   .hr-line {
     margin-top: 0px;
@@ -19,32 +20,33 @@
     right: 0;
     left: 0;
     z-index: 1030;
-    justify-content: space-between;
+    
     
   }
   .navbar-container{
     display: flex;
     
    padding-top: 15px;
+   background-color:  rgba(59, 59, 59, 0.7);
   
-   
-   
+   height: 90px;
   }
 
   .navbar-logo{
 width: 150px;
-height: 60px;
+height: 60px !important;
 margin-left: 250px;
   }
 
   .header{
     padding-top: 15px;
     text-align: center;
-    
+    margin-left: 150px;
   }
 
   .navbar-heading{
-    color: lightslategray;
+    color: #B5B5B5;
+    
     text-decoration: none;
     margin-left: 30px;
     

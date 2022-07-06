@@ -11,6 +11,13 @@
 
 }
 
+@media screen and (max-width: 480px) {
+    .table {
+      width: 40px;
+      overflow-x: scroll;
+    }
+  }
+
 
 
 .table th, table td{
