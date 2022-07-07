@@ -45,6 +45,10 @@
     
     }
 
+    .pagination{
+        
+    }
+
     
     
     
@@ -158,3 +162,123 @@
         border-width: 0px;
        text-align: end;
     }
+
+
+
+
+  
+    
+    
+.current-page {
+	margin-top: -40px;
+	vertical-align: middle;
+    width:110%;
+   margin-right: 810px;
+   margin-left: -13px;
+}
+
+.container{
+    width: 100%;
+}
+
+table {  width: 215%; overflow-y: scroll; }
+
+tr,td,th {
+	text-align:left;  
+	
+	font-size: 15px ;
+    
+}
+
+.user {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+	align-items: center;
+    
+}
+
+.user__body {
+	padding-left: 20px;
+	padding: 20px;
+   
+}
+
+.current-page {
+  font-size: 1.5rem;
+  vertical-align: middle;
+  
+}
+
+.pagination-wrapper {
+  display: flex;
+ flex-direction: row;
+ justify-content: center;
+	padding-top: 10!important;
+    margin-left: -535px !important;
+    list-style-type: none;
+   
+   
+}
+
+
+
+/* Override some Bootstrap pagination styles */
+ul.pagination {
+	margin-top: 0;
+	margin-bottom: 0;
+	margin-left: 0px !important;
+
+ align-items: center;
+   
+}
+ul.pagination li.page-item.active a.page-link {
+	color: #445565 !important;
+	background-color: red !important;
+	border-color: #ced4da !important;
+    margin-left: 0px !important;
+}
+ul.pagination a.page-link {
+	padding: 0.75rem 1rem;
+	min-width: 3.5rem;
+	text-align: center;
+	box-shadow: none !important;
+	border-color: red !important;
+	color: #6b88a4;
+	font-weight: 900;
+	font-size: 1rem;
+   
+}
+ul.pagination a.page-link:hover {
+	background-color: red;
+}
+
+.pagination{
+    display: flex;
+    padding: 0px;
+    border: solid 1px black;
+    justify-content: center;
+    text-align: center;
+    align-self: center;
+    align-items: center;
+   
+  color: black;
+    width: 150px;
+    height: 30px;
+    border-width: 1px;
+   
+}
+
+
+.page-link{
+    justify-content: center;
+    display: flex;
+    align-items: center;
+    align-self: center;
+    text-align: center;
+    margin-left: 0px !important;
+}
+
+.status-button{
+    margin: 30px !important;
+}

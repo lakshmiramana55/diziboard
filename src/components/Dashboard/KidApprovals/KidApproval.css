@@ -13,9 +13,9 @@
     background-color: #e4f0fa;
     margin-top: -10px !important;
     height: 35px;
-    margin-top: -33px;
+   
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-   width: 80%;
+   width: 81%;
    
 }
 
@@ -38,7 +38,7 @@
 .table-kid{
     height: 40px;
     margin-top: 10px;
-    width: 80.1%;
+    width: 81.2%;
 }
 
 @media screen and (max-width: 768px) {
@@ -49,8 +49,13 @@
   }
 
 .kid-approvals-para{
-    text-align: left;
-    font-size: 13px;
+    display: flex;
+    
+    justify-content: flex-start;
+    text-align: center;
+    font-weight: 300;
+    font-size: 15px;
+    margin-left: 10px;
     
 }
 
