@@ -141,17 +141,17 @@ const KidsStatus = () =>{
                     return (
                     <>
                        
-                       <div className="popup-container "> 
-                            <h1 className="heading">Change Status</h1>
+                       <div className="kid-popup-container col-md-4"> 
+                            <h1 className="kidStatus-heading">Change Status</h1>
                             <button type="button" className="close" aria-label="Close" onClick = {close}>
                                <span aria-hidden="true">&times;</span>
                             </button>
                             </div>
                             
                         <div className="para-container ">
-                        <p className="para">Do You Really Want to Change Status..?</p>
+                        <p className="kid-para">Do You Really Want to Change Status..?</p>
                         
-                        <div className="button-container">
+                        <div className="kid-button-container">
                         <button
                             type="button"
                             className="closing-button"
@@ -239,17 +239,17 @@ const KidsStatus = () =>{
 
                     
                         
-                       <div className="popup-container"> 
-                            <h1 className="heading">Change Status</h1>
+                       <div className="kid-popup-container"> 
+                            <h1 className="kidStatus-heading">Change Status</h1>
                             <button type="button" class="close" aria-label="Close" onClick = {close}>
                                <span aria-hidden="true">&times;</span>
                             </button>
                             </div>
                             
                         <div className="para-container">
-                        <p className="para">Do You Really Want to Change Status..?</p>
+                        <p className="kid-para">Do You Really Want to Change Status..?</p>
                         
-                        <div className="button-container">
+                        <div className="kid-button-container">
                         <button
                             type="button"
                             className="closing-button"
@@ -277,7 +277,7 @@ const KidsStatus = () =>{
             </button>
         </div>
     
-        <KidsTable data= {statusKid} column = {column} disableButtons = {disableButtons} selectedKidId={selectedKidId} />
+        <KidsTable  data= {statusKid} column = {column} disableButtons = {disableButtons} selectedKidId={selectedKidId} />
         
        
     

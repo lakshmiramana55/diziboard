@@ -32,13 +32,13 @@ const KidApprovals = () => {
   }, []);
 
   const column = [
-    {heading:'Select', value :'checkbox'},
-     {heading: 'Kid ID', value: 'mas_kidId'},
-     {heading: 'First Name', value: 'mas_firstName'},
-     {heading: 'Last Name', value: 'mas_lastName'},
-     {heading: 'School Name', value: 'mas_schoolName'},
-     {heading: 'Created On', value: 'mas_createdOn'},
-     {heading: 'kid Status', value: 'mas_kidStatus'},
+    // {heading:'Select', value :'checkbox'},
+    //  {heading: 'Kid ID', value: 'mas_kidId'},
+    //  {heading: 'First Name', value: 'mas_firstName'},
+    //  {heading: 'Last Name', value: 'mas_lastName'},
+    //  {heading: 'School Name', value: 'mas_schoolName'},
+    //  {heading: 'Created On', value: 'mas_createdOn'},
+    //  {heading: 'kid Status', value: 'mas_kidStatus'},
     
    ]
 
@@ -53,7 +53,7 @@ const KidApprovals = () => {
 
   return (
     
-  <div className="oj-flex.oj-flex-items-pad>.oj-flex-item">
+  <div className="approval-container">
     <p className="approval-name">{approvalState}</p>
     <p className="approval-name">{rejectState}</p>
       <div className="kid-approvals-buttons-container">
@@ -64,7 +64,8 @@ const KidApprovals = () => {
       </div>
     <div>
     <hr />
-    <table className="table table-bordered oj-flex.oj-flex-items-pad>.oj-flex-item">
+    <div className="kid-approvals-data">
+    <table className="table-kid table-bordered oj-flex.oj-flex-items-pad>.oj-flex-item">
                  <thead className="table-head1">
              <tr className='table-head '>
                  <th>Select</th>
@@ -83,11 +84,11 @@ const KidApprovals = () => {
                  
           </table>
           <div className="data-para">
-            <h1 className="para">No data to display.</h1>
+            <h1 className="kid-approvals-para">No data to display.</h1>
           </div>
-          
+          </div>
     </div>
-    <div className="page-container">
+    <div className="approval-page-container">
       <p >Page 1</p>
       <p className="page-name">(0 of at least 0 items)</p>
       <hr className="line"/>

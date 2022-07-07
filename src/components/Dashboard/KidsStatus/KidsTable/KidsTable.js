@@ -17,7 +17,7 @@ const KidsTable = (props) => {
    
     return (
 
-        <div>
+        <div className="status-container">
              
             <table className="table">
            
@@ -77,6 +77,7 @@ const TableBody = (props) => {
     }, [checkedKidIds])
 
     return (
+            
             <tr>
                 <th >
                     <input type="checkbox"  checked = {is_checked}  onChange={onChangeCheckboxHandler}

@@ -12,6 +12,7 @@
     padding: 30px;
     justify-content: space-between;
     
+    
   }
   .features-heading {
     margin-top: 50px;
@@ -19,6 +20,7 @@
     color: #333;
     font-size: 30px;
     font-weight: 400;
+   
   }
   .features-hr-line {
     width: 4%;

@@ -76,3 +76,14 @@
     background-color: #85bbe7;
 
 }
+
+.status-container1{
+    width: 100% !important;
+    }
+    
+    @media screen and (max-width: 400px) {
+        .status-container1 {
+          width: 100%;
+          overflow: scroll;
+        }
+      }

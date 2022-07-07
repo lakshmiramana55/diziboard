@@ -17,15 +17,15 @@ const KidApprovalTable = (props) => {
    
     return (
 
-        <div>
+        <div className="status-container1">
              
             <table className="table">
            
                 <thead>
                 
-                    <tr className="table-head">
+                    {/* <tr className="table-head">
                         {column.map((item, index) => <th>{item.heading}</th>)}
-                    </tr>
+                    </tr> */}
                     
                 </thead>
                 
@@ -77,15 +77,15 @@ const TableBody = (props) => {
     }, [checkedKidIds])
     return (
             <tr>
-                <th >
-                    <input type="checkbox"  onChange={onChangeCheckboxHandler}
+                {/* <th >
+                <input type="checkbox"  onChange={onChangeCheckboxHandler}
                  removeCheckBox = {removeCheckBox}/></th>
                 <th >{eachObj.mas_kidId}</th>
                 <th >{eachObj.mas_firstName}</th>
                 <th >{eachObj.mas_lastName}</th>
                 <th >{eachObj.mas_schoolName}</th>
                 <th >{eachObj.mas_createdOn}</th>
-                <th >{eachObj.mas_kidStatus}</th>
+                <th >{eachObj.mas_kidStatus}</th> */}
             </tr>
         )
 }

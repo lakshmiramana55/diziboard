@@ -11,14 +11,44 @@
 }
 .data-para{
     background-color: #e4f0fa;
-    margin: 18px;
+    margin-top: -10px !important;
     height: 35px;
     margin-top: -33px;
     box-shadow: rgba(0, 0, 0, 0.16) 0px 10px 36px 0px, rgba(0, 0, 0, 0.06) 0px 0px 0px 1px;
-  
+   width: 80%;
+   
 }
 
-.para{
+@media screen and (max-width: 768px) {
+    .data-para {
+    width: 100% !important;
+    overflow: scroll;
+    }
+  }
+
+.kid-approvals-data{
+    margin-left: 20px;
+    
+}
+
+.approval-container{
+    margin-top: 20px;
+}
+
+.table-kid{
+    height: 40px;
+    margin-top: 10px;
+    width: 80.1%;
+}
+
+@media screen and (max-width: 768px) {
+    .table-kid {
+     width: 100% !important;
+     overflow: scroll;
+    }
+  }
+
+.kid-approvals-para{
     text-align: left;
     font-size: 13px;
     
@@ -28,10 +58,13 @@
     width: 30px;
 }
 
+.table-head1{
+    width: 100%;
+}
 
 
 
-.page-container{
+.approval-page-container{
     display: flex;
     margin-left: 20px;
     margin-top: -10px;
@@ -57,5 +90,5 @@
 
 .approval-name{
     color: red;
-    margin-bottom: -18px;
+    margin-top: 0px;
 }

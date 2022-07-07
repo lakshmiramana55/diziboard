@@ -202,8 +202,8 @@ const Attendence = () => {
             //     DEACTIVATE
             // </button>
 
-           <div className="main-container">
-           <div className="header1">
+           <div className="attendence-calendar-container">
+           <div className="calendar-header1">
             <Calendar className='calendar1' onChange={handleShow} />
           </div>
           <div className="holidays-heading">
@@ -222,7 +222,7 @@ const Attendence = () => {
       // } >
       >
         {close =>(
-        <div className="attendance-container ">
+        <div className="attendance-popup-container ">
          
           <div className="attendance-popup ">
           <button type="button" className="close-button" aria-label="Close" onClick={close}>
@@ -266,7 +266,7 @@ const Attendence = () => {
               })}
   
             </div>
-            <div className="submit-button1">
+            <div className="attendence-submit-button1">
             <button className="submit-button" data-dismiss="modal" onClick={() => onSubmit(close())} >Submit</button>
             </div>
           </div>

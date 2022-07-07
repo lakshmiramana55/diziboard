@@ -96,7 +96,7 @@
         border: 1em;
      }   
     
-    .popup-container{
+    .kid-popup-container{
         display: flex;
         justify-content: space-between;
        background-color: #177ed7;
@@ -109,7 +109,15 @@
          border-radius: 1px;
         
     }
-    .heading{
+
+
+    @media screen and (max-width: 400px) {
+        .kid-popup-container {
+         margin-right: 380px !important;
+        }
+      }
+
+    .kidStatus-heading{
         color: white;
         font-size: 20px;
         padding-left: 10px;
@@ -136,14 +144,14 @@
         
     }
     
-    .para{
+    .kid-para{
         font-size: 13px;
         margin-left: 10px;
         padding-top: 5px;
 
     }
 
-    .button-container{
+    .kid-button-container{
        
         
         color: #ffffff;
