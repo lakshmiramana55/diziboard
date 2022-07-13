@@ -12,9 +12,10 @@
 }
 
 
-@media screen and (max-width: 480px){
-  .dashboard-nav-bg-container {
-    text-align: center !important;
+@media screen and (max-width: 610px){
+  .dashboard-nav-container {
+    
+    width: 100% !important;
     
   }
 }

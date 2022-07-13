@@ -1,5 +1,3 @@
-
-
 import "./NavBar.css";
 import React from "react";
 import { Link } from "react-router-dom";
@@ -7,6 +5,9 @@ import { Nav, Navbar } from "react-bootstrap";
 
 const NavBar = (props) => {
   const { displayOrHide } = props;
+
+
+  
 
   return (
     <div className="fixed-top col-md-4">
@@ -20,7 +21,7 @@ const NavBar = (props) => {
           />
         </Navbar.Brand>
         
-        <Navbar.Collapse id="responsive-navbar-nav portfolio-scroll">
+         <Navbar.Collapse id="responsive-navbar-nav portfolio-scroll">
           <Nav className="header portfolio-scroll space-around">
             <Nav.Link href="#home" className="navbar-heading">HOME</Nav.Link>
             <Nav.Link href="#about" className="navbar-heading">ABOUT</Nav.Link>
@@ -36,7 +37,12 @@ const NavBar = (props) => {
             </Link>
           </Nav>
           
-        </Navbar.Collapse>
+        </Navbar.Collapse> 
+        
+
+
+
+
        
         </div>
      
@@ -46,3 +52,7 @@ const NavBar = (props) => {
 };
 
 export default NavBar;
+
+
+
+

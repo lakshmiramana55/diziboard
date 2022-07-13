@@ -206,11 +206,7 @@ const Attendence = () => {
            <div className="calendar-header1">
             <Calendar className='calendar1' onChange={handleShow} />
           </div>
-          <div className="holidays-heading">
-          <h1 className="festival-heading">Festive Holidays List</h1>
-
-      <p className="festival-heading1">No Holidays in this Month</p>
-      </div>
+         
           </div>
         }
 
@@ -276,7 +272,11 @@ const Attendence = () => {
        
       </Popup>
 
+      <div className="holidays-heading">
+          <h1 className="festival-heading">Festive Holidays List</h1>
 
+      <p className="festival-heading1">No Holidays in this Month</p>
+      </div>
       
 
     </>

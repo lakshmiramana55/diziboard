@@ -67,15 +67,15 @@ const KidApprovals = () => {
     <div className="kid-approvals-data">
     <table className="table-kid table-bordered oj-flex.oj-flex-items-pad>.oj-flex-item">
                  <thead className="table-head1">
-             <tr className='table-head '>
-                 <th>Select</th>
-                  <th>Kid ID</th>
-                 <th>First Name</th>
-                 <th>Last Name</th>
-                 <th>Class</th>
-                 <th>Created On</th>
-                 <th>Kid Status</th>
-                 <th>Roll No</th>
+             <tr >
+                 <th className='table-head '>Select</th>
+                  <th className='table-head '>Kid ID</th>
+                 <th className='table-head '>First Name</th>
+                 <th className='table-head '>Last Name</th>
+                 <th className='table-head '>Class</th>
+                 <th className='table-head '>Created On</th>
+                 <th className='table-head '>Kid Status</th>
+                 <th className='table-head '>Roll No</th>
                 
                  </tr>
                 

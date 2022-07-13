@@ -2,14 +2,14 @@
 .attendence-calendar-container{
     display: flex;
     
-    flex-direction: column;
+    
 }
 
 .calendar-header1{
     background: -webkit-gradient(linear, left top, left bottom, from(#177ed7), to(#5c5898));
     height: 34px;
     
-    width:57vw;
+    width:55vw;
     justify-content: space-between;
    border-top-left-radius: 5px;
     border-top-right-radius: 5px;
@@ -21,40 +21,50 @@
 }
 
 
-.holidays-heading{
-    display: flex;
-    flex-direction: column;
-}
 
-@media screen and (max-width: 480px) {
-    .header1 {
-      width: 300px;
+
+@media screen and (max-width: 768px) {
+    .calendar-header1 {
+     width: 130vw !important;
+     height: 500px;
     }
   }
+  /* @media screen and (min-width: 768px) {
+    .calendar-header-mobile {
+     height: 60vh;
+     width: 80vw;
+    }
+} */
+/* @media screen and (min-width: 768px) {
+    .calendar-header-mobile{
+        display: none;
+    }
+} */
 
 .date{
-   color: #ffffff;
-   font-size: 18px;
-   font-weight: bold;
-   text-align: center;
-    margin-left: 200px;
-    margin-bottom: 15px;
+    color: #8b4b4b;
+    font-size: 98px;
+    font-weight: bold;
+    text-align: center;
+     margin-left: 200px;
+     margin-bottom: 15px;
 }
   
  
   .calendar{
     color:gray;
-    text-decoration: none;
+   
     margin-top: 0px;
     width: 1000px;
     box-shadow: rgba(0, 0, 0, 0.35) 0px 5px 15px;
-    
+    height: 500px;
+   
     
 }
 
  .calendar1{
     height: 280px !important;
-   box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px; ;
+    box-shadow:rgba(0, 0, 0, 0.35) 0px 5px 15px; 
     margin-left: 0px;
     width: 900px !important;
    border-width: 0px !important;
@@ -62,6 +72,15 @@
   color: lightslategray;
   
  }
+
+ @media screen and (max-width: 768px)  {
+    .calendar1 {
+        width: 120vw !important;
+       height: 70vh !important;
+        
+        
+      }
+  }
 
   
 
@@ -99,16 +118,37 @@
     margin-top: -30px;
 }
 
+.holidays-heading{
+    display: flex;
+    flex-direction: column;
+}
+
+@media screen and (max-width: 768px) {
+    .festival-heading {
+    margin-right: -750px;
+    
+    margin-top: -400px;
+    }
+  }
+
 .festival-heading1{
     background-color: #47bdef;
     font-size: 15px;
     text-align: center;
     margin-left: 1000px;
-    margin-top: -4px;
+    margin-top: 0px;
     height: 40px;
     padding-top: 8px;
     width: 450px!important;
 }
+
+@media screen and (max-width: 768px) {
+    .festival-heading1 {
+    margin-right: -780px;
+    width: 400px !important;
+    
+    }
+  }
 
 .attendance-popup-container{
    background-color: #fff !important;
@@ -120,6 +160,12 @@
    
    
 }
+/* @media screen and (min-width: 768px)  {
+    .attendance-popup-container {
+        width: 140% !important;
+        height: 550px;
+      }
+  } */
 
 .attendance-popup{
     background-color: #0572ce;
@@ -136,6 +182,14 @@
     }
   } */
 
+
+  /* @media screen and (min-width: 768px) and (max-width:1024px) {
+    .attendance-popup {
+        width: 250px;
+        align-content: stretch;
+        flex-wrap: wrap;
+      }
+  } */
 .image-container{
     padding-top: 50px;
     list-style-type: none;
